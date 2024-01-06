@@ -13,6 +13,17 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
+
+    - name: Copy repository contents to remote server via scp
+      uses: appleboy/scp-action@master
+      with:
+        host: ${{ secrets.BAMBA_HOST }}
+        username: ${{ secrets.BAMBA_USERNAME }}
+        port: ${{ secrets.BAMBA_PORT }}
+        key: ${{ secrets.BAMBA_KEY }}
+        passphrase: ${{ secrets.PASSPHRASE }}
+        source: "."
+        target: ${{ secrets.BAMBA_DIR }}
     - name: SSH to Server
       uses: appleboy/ssh-action@v1.0.2
       with:
@@ -28,4 +39,3 @@ jobs:
           cd /home/adisia/bamba-vue
           npm install
           git pull origin master
-          
