@@ -1,0 +1,30 @@
+name: Test, build and deploy
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+
+jobs:
+  bamba:
+    name: Run Tests
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: SSH to Server
+      uses: appleboy/ssh-action@v1.0.2
+      with:
+        host: ${{ secrets.BAMBA_HOST }}
+        username: ${{ secrets.BAMBA_USERNAME }}
+        #password: ${{ secrets.SSH_USER_PASSWORD }}
+        key: ${{ secrets.BAMBA_KEY }}
+        port: ${{ secrets.BAMBA_PORT }}
+        debug: true
+        script: |
+          whoami
+          ls -al
+          cd /home/adisia/bamba-vue
+          npm install
+          git pull origin master
