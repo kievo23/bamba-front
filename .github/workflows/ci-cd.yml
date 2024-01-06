@@ -13,6 +13,11 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
+    - uses: actions/setup-node@master
+    # The above line will set up NodeJS (the latest version ) because we are deploying a VueJS project.         
+    - run: npm install
+    # At this point, Github Action has spun out a Ubuntu Virtual Machine, installed all its dependencies plus Node in above line and the above line installs all the dependencies of your projects        
+    - run: npm run build
 
     - name: Copy repository contents to remote server via scp
       uses: appleboy/scp-action@master
@@ -35,6 +40,8 @@ jobs:
         debug: true
         script: |
             whoami
+            sudo apt update
+            sudo apt upgrade
             ls -al
             cd ${{secrets.BAMBA_DIR}} && npm install
             npm run build
