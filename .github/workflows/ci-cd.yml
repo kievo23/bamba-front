@@ -34,8 +34,7 @@ jobs:
         port: ${{ secrets.BAMBA_PORT }}
         debug: true
         script: |
-          whoami
-          ls -al
-          cd /home/adisia/bamba-vue
-          npm install
-          git pull origin master
+            whoami
+            ls -al
+            cd ${{secrets.BAMBA_DIR}} && npm install
+            npm run build:production
