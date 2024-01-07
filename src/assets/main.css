@@ -37,9 +37,12 @@ a,
 
 
 
-
+.modal .body{
+  padding-top: 10px;
+  width: 100%;
+}
 .modal{
-  width :350px;
+  width :300px;
   padding: 20px;
   margin: 100px auto;
   background: white;
@@ -69,10 +72,7 @@ a,
 .modal .title svg path{
   color: #17b309;
 }
-.modal .body{
-  padding-top: 10px;
-  width: 100%;
-}
+
 .modal .body p{
   color: #e6e6e6;
   justify-content: center;
