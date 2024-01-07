@@ -120,7 +120,8 @@ form {
 body,
 html {
   height:100%;
-  font-family:Poppins-Regular,sans-serif
+  font-family:Poppins-Regular,sans-serif;
+  background-color: white;
 }
 a {
   font-family:Poppins-Regular;
