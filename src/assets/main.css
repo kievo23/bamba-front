@@ -373,15 +373,9 @@ iframe {
 }
 .container-airtime-form-btn {
   width:100%;
-  display:-webkit-box;
-  display:-webkit-flex;
-  display:-moz-box;
-  display:-ms-flexbox;
-  display:flex;
-  flex-wrap:wrap;
-  justify-content:center;
-  padding-top:20px;
-  margin-bottom: 10px;
+  display: flex;
+  margin-bottom: 5px;
+  padding: 5px 0px;
 }
 .airtime-form-btn {
   font-family:Poppins-Bold;
@@ -421,7 +415,7 @@ iframe {
   display:flex;
   justify-content:celenter;
   align-items:center;
-  padding:10px 25px;
+  padding:14px 25px;
   -webkit-transition:all .4s;
   -o-transition:all .4s;
   -moz-transition:all .4s;
@@ -444,7 +438,7 @@ iframe {
   display:flex;
   justify-content:center;
   align-items:center;
-  padding:10px 15px;
+  padding:14px 15px;
   -webkit-transition:all .4s;
   -o-transition:all .4s;
   -moz-transition:all .4s;
