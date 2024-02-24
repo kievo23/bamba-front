@@ -1,6 +1,6 @@
 <template>
   <div class="mother">
-    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="150" />
+    <img alt="Vue logo" class="logo" src="@/assets/logo.png" width="150" />
     <form class="airtime-form validate-form" @submit.prevent="">
       <span class="airtime-form-title">
         Buy Airtime via <span class="green">Mpesa</span> for
