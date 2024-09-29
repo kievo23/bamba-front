@@ -58,7 +58,7 @@
     </form>
 
     <teleport to="#modals" v-if="showModal">
-      <Modal :phone="phone" :amount="amount" @close="toggleModal">
+      <Modal :phone="phone" :mpesaphone= "mpesaphone" :amount="amount" @close="toggleModal">
       </Modal>
     </teleport>    
     
@@ -85,6 +85,9 @@ export default {
   },
   methods: {
     toggleModal() {
+      if(!this.otherNumber){
+        this.mpesaphone = this.phone
+      }
       this.showModal = !this.showModal
     },
     otherNumberFunc(){

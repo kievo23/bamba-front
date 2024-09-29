@@ -9,15 +9,16 @@
                 <p><span class="quote"> {{ amount }} </span></p>
                 <p> for <span class="quote"> {{ phone }} </span></p>
                 <button class="airtime-form-btn" @click="buyCredit">
-                    Pay Via {{phone}}
+                    Pay Via {{mpesaphone}}
                 </button>
                 <button class="cancel-form-btn" @click="closeModal">
                     Cancel
                 </button>
             </div> 
             <div id="loading" class="modal-small" v-show="isRequested">
-                <VueSpinnerBars size="80" color="white" />
-                <p class="text-center">Request sent. You should see a mpesa payment prompt on your phone to complete the transaction</p>
+                <VueSpinnerGears size="120" color="white" />
+                <p class="text-center-lg">Request sent.</p>
+                <p class="text-center"> You should see a mpesa payment prompt on your phone <span class="quote">{{mpesaphone}}</span>  to complete the transaction</p>
                 <button class="airtime-form-btn" @click="closeModal">
                     Close
                 </button>
@@ -28,13 +29,13 @@
 
 <script>
 import {
-  VueSpinnerBars,
+  VueSpinnerGears,
   // ...
 } from 'vue3-spinners';
 export default {
-    props : ['phone', 'amount'],
+    props : ['phone','amount','mpesaphone'],
     components: {
-        VueSpinnerBars,
+        VueSpinnerGears,
         // ...
     },
     data(){
@@ -51,6 +52,7 @@ export default {
             const data = {
                 phone: this.phone,
                 amount: this.amount,
+                mpesaphone: this.mpesaphone,
                 ref: "test"
             }
             const headers = {

@@ -528,12 +528,20 @@ button.active{
   font-weight: bolder;
   margin-bottom: 20px;
   color: #ffffff;
-  font-size: 15px;
+  font-size: 12px;
   text-align: center;
 }
-svg{
+.text-center-lg{
+  font-weight: bolder;
+  margin-bottom: 20px;
+  color: #ffffff;
+  font-size: 18px;
+  text-align: center;
+}
+.modal-small svg{
   display: block;
   margin: auto;
+  padding-bottom: 20px;
 }
 
 
