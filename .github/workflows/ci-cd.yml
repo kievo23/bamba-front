@@ -19,16 +19,6 @@ jobs:
     # At this point, Github Action has spun out a Ubuntu Virtual Machine, installed all its dependencies plus Node in above line and the above line installs all the dependencies of your projects        
     - run: npm run build
 
-    # - name: Copy repository contents to remote server via scp
-    #   uses: appleboy/scp-action@master
-    #   with:
-    #     host: ${{ secrets.BAMBA_HOST }}
-    #     username: ${{ secrets.BAMBA_USERNAME }}
-    #     port: ${{ secrets.BAMBA_PORT }}
-    #     key: ${{ secrets.BAMBA_KEY }}
-    #     passphrase: ${{ secrets.PASSPHRASE }}
-    #     source: "."
-    #     target: ${{ secrets.BAMBA_DIR }}
     - name: SSH to Server
       uses: appleboy/ssh-action@v1.0.2
       with:
