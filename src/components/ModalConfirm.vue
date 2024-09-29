@@ -48,7 +48,7 @@ export default {
             this.$emit('close')
         },
         buyCredit() {
-            const url = import.meta.env.VITE_BASE_URL+"/stkpush";
+            const url = import.meta.env.VITE_BASE_URL+"/api/stkpush";
             const data = {
                 phone: this.phone,
                 amount: this.amount,
