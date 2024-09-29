@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
     - uses: actions/setup-node@master
     # The above line will set up NodeJS (the latest version ) because we are deploying a VueJS project.         
     - run: npm install
