@@ -53,7 +53,7 @@ export default {
                 phone: this.phone,
                 amount: this.amount,
                 mpesaphone: this.mpesaphone,
-                ref: "test"
+                ref: this.phone
             }
 
             const headers = {
