@@ -55,8 +55,9 @@ export default {
                 mpesaphone: this.mpesaphone,
                 ref: "test"
             }
-            
+
             const headers = {
+                'Content-Type': 'application/json',
                 'x-api-key': import.meta.env.VITE_API_KEY
             }
             this.axios.post(url,data,{headers}).then((res) => {
