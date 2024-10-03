@@ -24,7 +24,7 @@
         <input class="input100" type="text" name="phone" placeholder="0733 123 123 (Number receiving airtime)" v-model="phone" @focusout="validatePhone">
         <span id="phoneError" class="error" v-if="PhoneNotValid === true"> Phone should have 0700123456 format</span>
         <span class="symbol-input100">
-          <font-awesome-icon icon="fa-solid fa-phone" />
+          <font-awesome-icon icon="fa-solid fa-phone" @click="openContacts()"/>
         </span>
       </div>
       <div class="wrap-input100 validate-input" data-validate="Password is required">
@@ -80,7 +80,8 @@ export default {
       validated: false,
       PhoneNotValid: false,
       AmountNotValid: false,
-      MpesaPhoneNotValid: false
+      MpesaPhoneNotValid: false,
+      selectContact : null
     }
   },
   methods: {
@@ -89,6 +90,22 @@ export default {
         this.mpesaphone = this.phone
       }
       this.showModal = !this.showModal
+    },
+    openContacts() {
+      this.selectContact = async () => {
+        // feature check
+        if (!('contacts' in navigator)) {
+          return null;
+        }
+
+        // open the picker
+        const contact = await navigator.contacts.select(['name', 'tel'], {
+          multiple: false,
+        });
+
+        // handle the result
+        return `${contact[0].name[0]} - ${contact[0].tel[0]}`;
+      }
     },
     otherNumberFunc(){
       this.otherNumber = !this.otherNumber
