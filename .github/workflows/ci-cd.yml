@@ -34,5 +34,4 @@ jobs:
             ls -al
             cd ${{secrets.BAMBA_DIR}} 
             npm install
-            
             npm run build
