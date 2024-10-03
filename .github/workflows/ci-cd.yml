@@ -18,7 +18,7 @@ jobs:
     - run: npm run build
 
     - name: SSH to Server
-      uses: appleboy/ssh-action@v1.0.2
+      uses: appleboy/ssh-action@master
       with:
         host: ${{ secrets.BAMBA_HOST }}
         username: ${{ secrets.BAMBA_USERNAME }}
@@ -32,5 +32,6 @@ jobs:
             sudo apt upgrade
             npm install
             ls -al
-            cd ${{secrets.BAMBA_DIR}} && npm install
+            cd ${{secrets.BAMBA_DIR}} 
+            npm install
             npm run build
