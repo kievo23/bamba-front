@@ -81,7 +81,8 @@ export default {
       PhoneNotValid: false,
       AmountNotValid: false,
       MpesaPhoneNotValid: false,
-      selectContact : null
+      selectContact : null,
+      supported: null
     }
   },
   methods: {
@@ -92,6 +93,9 @@ export default {
       this.showModal = !this.showModal
     },
     openContacts() {
+      this.supported = "contacts" in navigator && "ContactsManager" in window;
+      console.log(this.supported);
+
       this.selectContact = async () => {
         // feature check
         if (!('contacts' in navigator)) {
