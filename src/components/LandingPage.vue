@@ -58,9 +58,9 @@
     </form>
 
     <teleport to="#modals" v-if="showModal">
-      <Modal :phone="phone" :mpesaphone= "mpesaphone" :amount="amount" @close="toggleModal">
+      <Modal :phone="phone" :mpesaphone="mpesaphone" :amount="amount" @close="toggleModal">
       </Modal>
-    </teleport>    
+    </teleport>
     
   </div>
 </template>
@@ -76,7 +76,6 @@ export default {
       amount: '',
       mpesaphone: '',
       showModal: false,
-
       validated: false,
       PhoneNotValid: false,
       AmountNotValid: false,

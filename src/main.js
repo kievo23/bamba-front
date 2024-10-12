@@ -17,12 +17,12 @@ import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
 /* import specific icons */
-import { faUserSecret , faPhone, faShoppingBag, faQuestionCircle } from '@fortawesome/free-solid-svg-icons'
+import { faUserSecret , faPhone, faShoppingBag, faQuestionCircle, faThumbsUp } from '@fortawesome/free-solid-svg-icons'
 
 //import { faAddressBook } from '@fortawesome/free-regular-svg-icons'
 
 /* add icons to the library */
-library.add(faUserSecret, faPhone, faShoppingBag, faQuestionCircle)
+library.add(faUserSecret, faPhone, faShoppingBag, faQuestionCircle, faThumbsUp)
 
 const app = createApp(App)
 
