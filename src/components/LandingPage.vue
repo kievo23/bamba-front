@@ -22,14 +22,14 @@
       
       <div class="wrap-input100 validate-input" data-validate="Valid Phone is required: ex@abc.xyz">
         <input class="input100" type="text" name="phone" placeholder="0733 123 123 (Number receiving airtime)" v-model="phone" @focusout="validatePhone">
-        <span id="phoneError" class="error" v-if="PhoneNotValid === true"> Phone should have 0700123456 format</span>
+        <span id="phoneError" class="error" v-if="PhoneNotValid === true"> Phone no format-> 0700123456</span>
         <span class="symbol-input100">
           <font-awesome-icon icon="fa-solid fa-phone" @click="openContacts()"/>
         </span>
       </div>
       <div class="wrap-input100 validate-input" data-validate="Password is required">
         <input class="input100" type="text" name="pass" placeholder="40 (amount)" v-model="amount" @keyup="validateAmount">
-        <span id="amountError" class="error" v-if="AmountNotValid === true">Amount should be between 5 and 1000 bob</span>
+        <span id="amountError" class="error" v-if="AmountNotValid === true">Amount is between 5 and 100 bob</span>
         <span class="symbol-input100">
           <font-awesome-icon icon="fa-solid fa-bag-shopping" />
         </span>
