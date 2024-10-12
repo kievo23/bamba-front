@@ -28,10 +28,9 @@ jobs:
         debug: true
         script: |
             whoami
-            sudo apt update
-            sudo apt upgrade
             npm install
             ls -al
             cd ${{secrets.BAMBA_DIR}} 
+            git pull origin master
             npm install
             npm run build
