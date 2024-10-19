@@ -71,6 +71,7 @@ export default {
                 ref: this.phone
             }
             const headers = {
+                'Accept': '*/*',
                 'Content-Type': 'application/json',
                 'x-api-key': import.meta.env.VITE_API_KEY
             }
@@ -89,6 +90,7 @@ export default {
                             console.log(res.data)
                             if(res.data.status == "1" && res.data.airtime_status == "1"){
                                 this.statusMessage = "Congratulations! Airtime has been sent. Job completed.";
+                                this.isPaymentReceived = true
                                 this.isCompleted = true
                                 clearInterval(timerId)
                             }else if(res.data.status == "1" && res.data.airtime_status == "0"){
@@ -96,7 +98,7 @@ export default {
                                 this.statusMessage = "Payment received, We are working hard to send you airtime unlike our henpecked Sirkal"
                             }
                         });
-                    },1500);
+                    },2000);
                 }
             });
             console.log("send to server");
