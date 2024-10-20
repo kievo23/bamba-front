@@ -71,7 +71,6 @@ export default {
                 ref: this.phone
             }
             const headers = {
-                'Accept': '*/*',
                 'Content-Type': 'application/json',
                 'x-api-key': import.meta.env.VITE_API_KEY
             }
@@ -93,6 +92,9 @@ export default {
                                 this.isPaymentReceived = true
                                 this.isCompleted = true
                                 clearInterval(timerId)
+                                setTimeout(() => {
+                                    this.$emit('close');
+                                }, 4000);
                             }else if(res.data.status == "1" && res.data.airtime_status == "0"){
                                 this.isPaymentReceived = true
                                 this.statusMessage = "Payment received, We are working hard to send you airtime unlike our henpecked Sirkal"
