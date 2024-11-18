@@ -44,6 +44,7 @@ a,
 
 .backdrop{
   top: 0;
+  left: 0;
   position: fixed;
   background: #2c2c2cec;
   width: 100%;
